@@ -822,3 +822,13 @@ Processing by SongsController#create as HTML
   [1m[35m (60.7ms)[0m  commit transaction
 Redirected to http://159.89.225.105:57687/artists/5/songs/26
 Completed 302 Found in 67ms (ActiveRecord: 61.2ms)
+
+
+Started GET "/artists/5/songs/26" for 190.102.85.211 at 2019-01-31 22:11:23 +0000
+Cannot render console from 190.102.85.211! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SongsController#show as HTML
+  Parameters: {"artist_id"=>"5", "id"=>"26"}
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mSong Load (0.1ms)[0m  SELECT  "songs".* FROM "songs" WHERE "songs"."artist_id" = ? AND "songs"."id" = ? LIMIT 1  [["artist_id", 5], ["id", 26]]
+  Rendered songs/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 8ms (Views: 5.9ms | ActiveRecord: 0.2ms)
